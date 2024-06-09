@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="x-icon" href="images\icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M.S. Haque</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .sidebar img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            flex: 2;
+            margin-left: 20px;
+        }
+
+        section {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        #papers ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #papers ul li {
+            margin: 10px 0;
+        }
+
+        #papers ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+        }
+
+        #papers ul li a:hover {
+            color: #007BFF;
+        }
+
+        .contact {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="images\profile.png" alt="Profile">
+            <h2>Mohammad Samiul Haque</h2>
+            <p>High-school student</p>
+        </div>
+        <div class="content">
+            <section id="about">
+                <h2>About Me</h2>
+                <p>I'm presently a 9th grader from Mymensingh, Bangladesh. I'm interested in Mathematics, Physics and Programming and I'm trying to learn problem-solving skills.</p>
+            </section>
+            <section id="papers">
+                <h2>Articles</h2>
+                <ul id="paper-list">
+                    <!-- JavaScript will populate this list -->
+                </ul>
+            </section>
+            <section class="contact">
+                <h2>Contact</h2>
+                <p>Email: <a href="mailto:mrtreppple@gmail.com">mrtreppple@gmail.com</a></p>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const papers = [
+                { title: "Mathematical proofs : Induction and why it works", link: "https://drive.google.com/file/d/1k57FxrcVgkiKy5QWnNAgQxNVwEsMf9zr/view?usp=sharing" },
+            ];
+
+            const paperList = document.getElementById('paper-list');
+
+            papers.forEach(paper => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = paper.link;
+                a.textContent = paper.title;
+                li.appendChild(a);
+                paperList.appendChild(li);
+            });
+        });
+    </script>
+</body>
+</html>
